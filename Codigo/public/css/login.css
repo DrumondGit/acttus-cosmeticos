@@ -1,0 +1,130 @@
+form{
+    width: 35%;
+}
+
+input, input::placeholder, input::selection, input:focus{
+    color: #e3e3e3 !important;
+}
+
+input, input.form-control, input:focus, input.form-control:focus {
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    border: none !important;
+    border-bottom: solid #e7e7e7 2px !important;
+    border-radius: 0;
+    background-color: #474747;
+}
+
+@media (max-width: 824px) {
+    #mulher{
+        display: none;
+    }
+
+    form{
+        width: 40%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 719px) {
+    #elipse{
+        display: none;
+    }
+
+    #elipse2{
+        left: 6vw !important;
+        top: 13vh !important;
+    }
+
+    form{
+        width: 50%;
+    }
+}
+
+@media (max-width: 569px) {
+    form{
+        width: 60%;
+    }
+}
+
+@media (max-width: 479px) {
+    #elipse2{
+        display: none;
+    }
+    
+    #elipseListrada{
+        display: none;
+    }
+    
+    #triangulos{
+        display: none;
+    }
+
+    form{
+        width: 85%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 12vh !important;
+        margin-bottom: 13vh !important;
+    }
+
+    h1{
+        font-size: 15vw !important;
+    }
+
+    .form-control{
+        font-size: 6vw !important;
+    }
+}
+
+/* Ellipse 1 */
+#elipse{
+    position: absolute;
+    width: 82vh;
+    height: 82vh;
+    left: -58vh;
+    top: 11vh;
+    border-radius: 100%;
+
+    background: #514B96;
+}
+
+/* Ellipse 2 */
+#elipse2{
+    position: absolute;
+    width: 7vh;
+    height: 7vh;
+    left: 9vh;
+    top: 20vh;
+    border-radius: 100%;
+
+    background: #635E9E;
+    transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+/* Ellipse 3 */
+#elipseListrada{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* Mulher */
+#mulher{
+    position: absolute;
+    top: 27vh;
+    right: 4vw;
+}
+
+/* Triangulos */
+#triangulos{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

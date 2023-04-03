@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="copyright" content="© 2023 Acttus Cosméticos" />
+    <meta name="authors" content="Amanda M de Souza, Guilherme Drumond Silva, Luiz Gustavo M Santos, Pedro R Vidigal, Vítor de F Pereira, Vitor N Calhau" />
+    <meta name="description" content="Sistema de controle de produção da empresa Acttus" />
+    <meta name="keywords" content="controle, gerenciamento, cosméticos, produção, produto, cabelo, Acttus" />
+    <!-- Style -->
+        <!-- Bootstrap v4.0 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- Main -->
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/cadProduto.css">
+    <!-- Script -->
+        <!-- Bootstrap v4.0 -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous" defer></script>
+        <!-- Main -->
+        <script src="js/main.js" defer></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <!-- Título da página -->
+    <title>Novo Produto - Controle de Produção</title>
+</head>
+
+<body onload="getInfoProduto()">
+    <form id="grid" class="mt-5 p-0 container">
+        <h1 id="titulo" class="mb-4"><i class="bi bi-arrow-left-circle mr-4" id="back" onclick="history.back()"></i>Cadastrar Produto</h1>
+        <div id="divNome">
+            <label for="name">Nome do produto:</label>
+            <input type="text" class="form-control campo" id="name">
+        </div>
+        <div id="divLucro">
+            <label for="lucro">Margem de lucro:</label>
+            <input type="text" class="form-control campo" id="lucro" value="50%">
+        </div>
+        <div id="divFormula">
+            <label>Nova fórmula:</label>
+            <button class="add form-control mb-3">+ Adicionar fórmula</button>
+            <table id="formulas" class="m-0 p-0">
+                <!-- Implementando o core, o conteúdo dessa table é removido -->
+                <tbody>
+                    <tr class="item mt-2">
+                        <td>Nome da fórmula</td>
+                        <td>Max: R$00,00</td>
+                        <td>Principal</td>
+                        <td><i class="bi bi-x-square"></i></td>
+                    </tr>
+                    <tr class="item mt-2">
+                        <td>Nome da fórmula</td>
+                        <td>Max: R$00,00</td>
+                        <td></td>
+                        <td><i class="bi bi-x-square"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="divEmbalagem" class="mb-3">
+            <label>Nova embalagem:</label>
+            <button class="add form-control mb-3">+ Adicionar embalagem</button>
+            <table id="embalagens" class="m-0 p-0">
+                <!-- Implementando o core, o conteúdo dessa table é removido -->
+                <tbody>
+                    <tr class="item mt-2">
+                        <td>Select embalagem</td>
+                        <td>Max: R$00,00</td>
+                        <td>Padrão</td>
+                        <td><i class="bi bi-x-square"></i></td>
+                    </tr>
+                    <tr class="item mt-2">
+                        <td>Select embalagem</td>
+                        <td>Max: R$00,00</td>
+                        <td></td>
+                        <td><i class="bi bi-x-square"></i></td>
+                    </tr>
+                    <tr class="item mt-2">
+                        <td>Select embalagem</td>
+                        <td>Max: R$00,00</td>
+                        <td></td>
+                        <td><i class="bi bi-x-square"></i></td>
+                    </tr>
+                    <tr class="item mt-2">
+                        <td>Select embalagem</td>
+                        <td>Max: R$00,00</td>
+                        <td></td>
+                        <td><i class="bi bi-x-square"></i></td>
+                    </tr>
+                    <tr class="item mt-2">
+                        <td>Select embalagem</td>
+                        <td>Max: R$00,00</td>
+                        <td></td>
+                        <td><i class="bi bi-x-square"></i></td>
+                    </tr>
+                    <tr class="item mt-2">
+                        <td>Select embalagem</td>
+                        <td>Max: R$00,00</td>
+                        <td></td>
+                        <td><i class="bi bi-x-square"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="divRotulo">
+            <label>Novo rótulo:</label>
+            <button class="add form-control mb-3">+ Adicionar rótulo</button>
+            <table id="rotulos" class="m-0 p-0">
+                <!-- Implementando o core, o conteúdo dessa table é removido -->
+                <tbody>
+                    <tr class="item mt-2">
+                        <td>Rótulo</td>
+                        <td>15x10</td>
+                        <td>Max: R$00,00</td>
+                        <td>Padrão</td>
+                        <td><i class="bi bi-x-square"></i></td>
+                    </tr>
+                    <tr class="item mt-2">
+                        <td>Contra rótulo</td>
+                        <td>15x10</td>
+                        <td>Max: R$00,00</td>
+                        <td>Padrão</td>
+                        <td><i class="bi bi-x-square"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="fim">
+            <div class="m-0 p-0">
+                <label class="add p-2 mr-2">Custo total: R$6,00</label>
+                <label class="add p-2 ml-2">Valor final: R$12,00</label>
+            </div>
+            <button class="form-control col-sm-5 mb-2 mt-2" onclick="cadastrarProduto(event)">Cadastrar</button>
+        </div>
+    </form>
+
+
+    <svg id="elipseListrada" width="18vw" height="18vw" viewBox="0 0 431 327" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.74589 -265.125C6.45305 -300.276 13.6302 -335.131 24.2774 -369.134L374.866 -719.723C408.869 -730.37 443.724 -737.547 478.875 -741.254L2.74589 -265.125ZM167.745 180.888C182.089 194.441 196.998 207.05 212.394 218.717L962.717 -531.606C951.05 -547.002 938.441 -561.911 924.888 -576.255L167.745 180.888ZM321.784 282.7C303.114 274.59 284.812 265.366 266.979 255.027L999.027 -477.021C1009.37 -459.188 1018.59 -440.886 1026.7 -422.216L321.784 282.7ZM388.76 306.618C411.114 312.958 433.8 317.816 456.662 321.194L1065.19 -287.338C1061.82 -310.2 1056.96 -332.886 1050.62 -355.24L388.76 306.618ZM633.215 318.015C603.014 323.597 572.427 326.572 541.814 326.937L1070.94 -202.186C1070.57 -171.573 1067.6 -140.986 1062.01 -110.785L633.215 318.015ZM768.272 273.852C820.978 248.408 870.379 213.825 914.102 170.102C957.825 126.379 992.408 76.978 1017.85 24.272L768.272 273.852ZM878.045 -620.306L123.694 134.045C110.977 118.803 99.239 103.021 88.4798 86.781L830.781 -655.52C847.021 -644.761 862.803 -633.023 878.045 -620.306ZM55.2624 29.104L773.104 -688.738C754.193 -698.104 734.844 -706.285 715.167 -713.279L30.7207 -28.8326C37.7155 -9.15617 45.896 10.193 55.2624 29.104ZM10.8703 -99.8765C5.92029 -123.863 2.62665 -148.123 0.989353 -172.474L571.526 -743.011C595.877 -741.373 620.137 -738.08 644.123 -733.13L10.8703 -99.8765Z" fill="#514B96"/>
+      </svg>
+</body>
+</html>

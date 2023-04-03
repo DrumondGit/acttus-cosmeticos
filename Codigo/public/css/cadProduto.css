@@ -1,0 +1,86 @@
+body{
+    padding: 15px;
+}
+
+form{
+    height: 100%;
+}
+
+.esq{
+    padding-right: 30px;
+}
+
+.dir{
+    padding-left: 30px;
+}
+
+#fim, #fim>div{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: end;
+    justify-content: end;
+}
+
+#formulas, #rotulos{
+    max-height: 110px;
+    overflow-y: auto;
+}
+
+table#formulas>tbody, table#rotulos>tbody, table#embalagens>tbody{
+    max-height: 80px;
+    overflow-y: auto;
+}
+
+@media (max-width: 824px) {
+
+    .esq{
+        padding: 15px;
+    }
+    
+    .dir{
+        padding: 15px;
+    }
+}
+
+#titulo{
+    grid-area: titulo;
+}
+
+#divNome{
+    grid-area: divNome;
+}
+
+#divLucro{
+    grid-area: divLucro;
+}
+
+#divFormula{
+    grid-area: divFormula;
+}
+
+#divEmbalagem{
+    grid-area: divEmbalagem;
+}
+
+#divRotulo{
+    grid-area: divRotulo;
+}
+
+#fim{
+    grid-area: fim;
+}
+
+#grid{
+    display: grid;
+    grid-template-areas:
+    "titulo titulo titulo titulo titulo titulo"
+    "divNome divNome divNome divLucro divLucro divLucro"
+    "divFormula divFormula divFormula divEmbalagem divEmbalagem divEmbalagem"
+    "divFormula divFormula divFormula divEmbalagem divEmbalagem divEmbalagem"
+    "divRotulo divRotulo divRotulo divEmbalagem divEmbalagem divEmbalagem"
+    "divRotulo divRotulo divRotulo fim fim fim";
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    gap: 10px 35px;
+}
+

@@ -1,0 +1,30 @@
+{
+  "name": "codigo",
+  "version": "1.0.0",
+  "description": "Sistema de controle de produção da empresa Acttus",
+  "main": "index.js",
+  "scripts": {
+    "test": "Aplicação funcionando",
+    "start": "nodemon app.js"
+  },
+  "keywords": [
+    "controle",
+    " gerenciamento",
+    " cosméticos",
+    "produção",
+    " produto",
+    "cabelo",
+    "Acttus"
+  ],
+  "author": "Acttus Cosméticos",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.3.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.22"
+  },
+  "devDependencies": {}
+}
